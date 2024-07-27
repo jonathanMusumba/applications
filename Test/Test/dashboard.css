@@ -1,0 +1,215 @@
+/* Default light mode styles */
+body, .header, .navigation li a, .tooltip, .progress-bar, .table-dropdown th, .table-dropdown td {
+    background-color: #fff;
+    color: #333; /* Default text color */
+}
+
+/* Dark mode styles */
+body.dark-mode,
+.header.dark-mode,
+.navigation li a.dark-mode,
+.tooltip.dark-mode,
+.progress-section.dark-mode,
+.progress-section.dark-mode .card,
+.progress-section.dark-mode .card-body,
+.progress-section.dark-mode .card-title,
+.progress-section.dark-mode .card-text {
+    color: #fff; /* White text color */
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #28a745; /* Green background color */
+    padding: 10px 20px;
+    color: #fff; /* White text color */
+}
+
+.logo {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-weight: bold;
+}
+
+.navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navigation li {
+    margin-right: 15px; /* Adjust spacing between navigation items */
+}
+
+.navigation li:last-child {
+    margin-right: 0; /* Remove margin from the last navigation item */
+}
+
+.navigation li a {
+    color: #f5f2f2; /* White text color */
+    text-decoration: none;
+    padding: 10px;
+    background-color: transparent; /* Remove background color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color change */
+    position: relative;
+    border: none; /* Remove any borders */
+    outline: none; /* Remove outline on focus */
+}
+
+.navigation li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background color on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.navigation li a .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.navigation li a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#current-date {
+    color: #fff; /* White text color */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.navigation li a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 767.98px) {
+    .navigation {
+        justify-content: center; /* Center align navigation items on small screens */
+    }
+
+    .navigation li {
+        margin: 5px; /* Adjust margin for smaller spacing between items */
+    }
+
+    .navigation li a {
+        padding: 8px; /* Reduce padding for smaller touch targets */
+    }
+}
+
+.form-section {
+    margin-bottom: 20px; /* Bottom margin for each form section */
+}
+
+/* Progress bar styles */
+.progress {
+    width: 50%;
+    background-color: #ddd;
+}
+
+.progress-bar {
+    background-color: #007bff;
+    height: 30px;
+    width: 250px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+/* Table styles */
+.table-dropdown {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+    /* Add more styles as needed */
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.header.dark-mode {
+    background-color: #333;
+}
+
+.navigation li a.dark-mode {
+    color: #ffffff;
+}
+
+.navigation li a.dark-mode:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.progress-bar.dark-mode {
+    background-color: #555;
+}
+header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}

@@ -1,0 +1,186 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Top Navigation */
+.top-nav {
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.top-nav .logo img {
+    height: 40px;
+}
+
+/* Mode Toggle */
+.top-nav .mode-toggle {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the element */
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Dark Mode Styling */
+.dark-mode .top-nav {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .side-nav {
+    background-color: #222;
+    color: #ccc;
+}
+
+.dark-mode .content {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .side-nav .nav-item.active {
+    background-color: #00796b;
+}
+
+.dark-mode .side-nav .nav-item {
+    border-bottom: 1px solid #444;
+}
+
+/* Side Navigation */
+.side-nav {
+    background-color: white;
+    border-right: 1px solid black;
+    position: fixed;
+    top: 50px; /* Adjust based on top-nav height */
+    bottom: 0;
+    width: 200px;
+    overflow-y: auto;
+}
+
+.side-nav .nav-item {
+    padding: 10px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.side-nav .nav-item:hover,
+.side-nav .nav-item.active {
+    background-color: green;
+    color: white;
+}
+
+.content {
+    margin-left: 200px; /* Adjust based on side-nav width */
+    padding: 20px;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .side-nav {
+        display: none;
+    }
+
+    .top-nav .mode-toggle {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .top-nav .mode-toggle .slider {
+        width: 50px;
+        height: 25px;
+    }
+
+    .top-nav .mode-toggle .tooltip {
+        display: block;
+        top: 60%;
+        left: 0;
+        margin-left: 0;
+        transform: translateY(-50%);
+    }
+}

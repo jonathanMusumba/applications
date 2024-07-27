@@ -1,0 +1,28 @@
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#validationMessage {
+    color: red;
+}
+.inline-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inline-form div {
+    display: flex;
+    align-items: center;
+}
+
+
+.inline-form label {
+    margin-right: 5px;
+}
+#didNotSitWarning {
+display: none; /* Hide the warning initially */
+}

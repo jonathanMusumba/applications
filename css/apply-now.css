@@ -1,0 +1,82 @@
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+}
+
+.section-header i {
+    margin-right: 10px;
+}
+
+.section-header span {
+    color: red;
+}
+
+.form-section {
+    display: none;
+    margin-top: 10px;
+}
+
+.form-section input {
+    margin-bottom: 10px;
+}
+
+.filled .section-header span {
+    color: green;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+}
+
+.status span {
+    margin-left: 10px;
+}
+
+.status .fa-circle-stop {
+    color: red;
+}
+
+.status .fa-circle-check {
+    color: green;
+}
+
+#submitApplicationButton:disabled {
+    background-color: green;
+    cursor: not-allowed;
+}
+
+.declaration {
+    display: flex;
+    align-items: center;
+}
+
+.declaration-checkbox {
+    margin-right: 10px;
+}
+
+.form-section {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.circle-exclamation {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+}

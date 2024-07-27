@@ -1,0 +1,87 @@
+/* Global Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Logo Section */
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Display on the far left */
+
+#user-info {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+
+/* Side Navigation */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+/* Main Content */
+
+#main-content {
+    margin-left: 200px;
+    /* Adjust based on your side navigation width */
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+
+/* Children Floating */
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section li {
+    margin-right: 20px;
+}
+
+
+/* Footer Section */
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    #main-content {
+        margin-left: 0;
+    }
+    section ul {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,111 @@
+       /* Custom styles for tabs */
+       .tab-content {
+        padding-top: 20px;
+    }
+    .progress {
+        height: 20px;
+        margin-bottom: 30px;
+        overflow: visible;
+    }
+    .progress-bar {
+        border-radius: 10px;
+        height: 20px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #28a745; /* Green background color */
+        padding: 10px 20px;
+        color: #fff; /* White text color */
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .navigation {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+align-items: center;
+}
+
+.navigation li {
+margin-right: 10px; /* Adjust spacing between navigation items */
+}
+
+.navigation li a {
+color: #fff;
+text-decoration: none;
+padding: 10px;
+transition: background-color 0.3s;
+position: relative;
+}
+
+.navigation li a.active,
+.navigation li a:hover {
+background-color: rgba(255, 255, 255, 0.2); /* Light background color on hover/active */
+border-radius: 5px;
+}
+
+.navigation li a .tooltip {
+visibility: hidden;
+width: 120px;
+background-color: #000;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+
+/* Position the tooltip */
+position: absolute;
+z-index: 1;
+bottom: 125%;
+left: 50%;
+margin-left: -60px;
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.navigation li a:hover .tooltip {
+visibility: visible;
+opacity: 1;
+}
+
+@media (max-width: 767.98px) {
+.navigation {
+    justify-content: center; /* Center align navigation items on small screens */
+}
+
+.navigation li {
+    margin: 5px; /* Adjust margin for smaller spacing between items */
+}
+
+.navigation li a {
+    padding: 8px; /* Reduce padding for smaller touch targets */
+}
+}; /* Padding for top and bottom */
+    
+    .form-section {
+        margin-bottom: 20px; /* Bottom margin for each form section */
+    }
+    .progress {
+        width: 50%;
+        background-color: #ddd;
+    }
+
+.progress-bar {
+    background-color: #007bff;
+    height: 30px;
+    width: 250px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress Bar Example</title>
+<style>
+/* Example styles for progress bar */
+.progress {
+    width: 100%;
+    background-color: #ddd;
+}
+
+.progress-bar {
+    background-color: #007bff;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<section class="container mt-5 progress-section">
+    <h2>Section 1</h2>
+    <input type="text" required>
+</section>
+
+<section class="container mt-5 progress-section">
+    <h2>Section 2</h2>
+    <input type="text" required>
+</section>
+
+<section class="container mt-5 progress-section">
+    <h2>Section 3</h2>
+    <input type="text" required>
+</section>
+
+<section class="container mt-5 progress-section">
+    <h2>Section 4</h2>
+    <input type="text" required>
+</section>
+
+<!-- Progress Bar -->
+<div id="progress-bar" class="progress">
+    <div id="progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+        aria-valuemin="0" aria-valuemax="100">0%</div>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    var totalSections = $('.progress-section').length; // Total number of sections with class 'progress-section'
+
+    // Function to calculate and update progress
+    function updateProgress() {
+        var completedSections = 0;
+
+        // Check each section with class 'progress-section' for completion
+        $('.progress-section').each(function() {
+            var $section = $(this);
+
+            // Count completed sections based on filled required fields
+            if ($section.find('input[required]').filter(function() { return $(this).val(); }).length > 0) {
+                completedSections++;
+            }
+        });
+
+        // Calculate progress percentage
+        var progress = (completedSections / totalSections) * 100;
+
+        // Update the progress bar
+        $('#progress').css('width', progress + '%').attr('aria-valuenow', progress).text(progress.toFixed(2) + '%');
+    }
+
+    // Call updateProgress initially and whenever something changes in your form sections
+    updateProgress();
+
+    // Example event listeners (replace with actual form logic triggering progress update)
+    $('input[required]').on('input', function() {
+        // Trigger updateProgress whenever a required field changes
+        updateProgress();
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,839 @@
+/* General Styles */
+body {
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+        color: #444444;
+      }
+      
+      a {
+        text-decoration: none;
+        color: #5cb874;
+      }
+      
+      a:hover {
+        color: #80c792;
+        text-decoration: none;
+      }
+      
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: Arial,Raleway, sans-serif;
+      }
+      
+
+      .back-to-top {
+        position: fixed;
+        visibility: hidden;
+        opacity: 0;
+        right: 15px;
+        bottom: 15px;
+        z-index: 996;
+        background: #5cb874;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        transition: all 0.4s;
+      }
+      
+      .back-to-top i {
+        font-size: 24px;
+        color: #fff;
+        line-height: 0;
+      }
+      
+      .back-to-top:hover {
+        background: #78c48c;
+        color: #fff;
+      }
+      
+      .back-to-top.active {
+        visibility: visible;
+        opacity: 1;
+      }
+      
+      /*--------------------------------------------------------------
+      # Top Bar
+      --------------------------------------------------------------*/
+      #topbar {
+        background: #fbfbfb;
+        font-size: 15px;
+        height: 40px;
+        padding: 0;
+      }
+      
+      #topbar .contact-info a {
+        line-height: 0;
+        color: #444444;
+        transition: 0.3s;
+      }
+      
+      #topbar .contact-info a:hover {
+        color: #5cb874;
+      }
+      
+      #topbar .contact-info i {
+        color: #5cb874;
+        line-height: 0;
+        margin-right: 5px;
+      }
+      
+      #topbar .contact-info .phone-icon {
+        margin-left: 15px;
+      }
+      
+      #topbar .social-links a {
+        color: #6f6f6f;
+        padding: 4px 12px;
+        display: inline-block;
+        line-height: 1px;
+        transition: 0.3s;
+      }
+      
+      #topbar .social-links a:hover {
+        color: #5cb874;
+      }
+      
+      /*--------------------------------------------------------------
+      # Header
+      --------------------------------------------------------------*/
+      #header {
+        background: #fff;
+        transition: all 0.5s;
+        z-index: 997;
+        height: 70px;
+      }
+      
+      #header.header-scrolled {
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      #header .logo {
+        font-size: 30px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      
+      #header .logo a {
+        color: #5cb874;
+      }
+      
+      #header .logo img {
+        max-height: 40px;
+      }
+      
+      .scrolled-offset {
+        margin-top: 70px;
+      }
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #6f4f28; /* Coffee brown */
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: red;
+}
+.user-menu a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+.btn-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-cta apply-now {
+    background-color: #28a745;
+}
+
+.apply-now:hover {
+    background-color: #218838;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+/* About Section */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    animation: fadeIn 2s ease-out;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Courses Section */
+.courses {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.courses h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.course-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.course-tabs .tab-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.course-tabs .tab-button.active,
+.course-tabs .tab-button:hover {
+    background-color: #0056b3;
+}
+
+.course-content .tab-content {
+    display: none;
+    animation: fadeIn 1s ease-out;
+}
+
+.course-content .tab-content.active {
+    display: block;
+}
+
+/* Admissions Section */
+.admissions {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.admissions-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.admissions-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.admissions-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn-cta {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px;
+}
+
+.btn-cta:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Accordion Styles */
+.accordion {
+    margin: 40px auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+    cursor: pointer;
+    padding: 15px;
+    font-size: 1.2em;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+    background-color: #e1e1e1;
+}
+
+.accordion-content {
+    padding: 15px;
+    display: none;
+    background-color: white;
+}
+
+/* Card Slider Styles */
+.past-admissions {
+    margin: 40px auto;
+    max-width: 900px;
+    text-align: left;
+}
+
+.card-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    margin: 0 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* Intake Information Styles */
+.intake-info {
+    margin: 40px auto;
+    max-width: 900px;
+    text-align: left;
+}
+
+.intake-info h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.intake-info p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Events & News Section */
+.events-news {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.events-news h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.events-slider {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    animation: fadeIn 2s ease-out;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.testimonials-slider {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+/* Footer Section */
+footer {
+    padding: 20px;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+}
+
+footer .social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .newsletter-signup input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+footer .newsletter-signup button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.course-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.community-engagement {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+.community-engagement h2,
+.community-engagement h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.testimonials,
+.community-activities,
+.facilities,
+.clubs-associations,
+.staff-profiles {
+    margin-bottom: 50px;
+}
+
+.testimonials-slider,
+.activities-slider,
+.facilities-grid,
+.staff-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.testimonials-slider {
+    height: 250px; /* Adjust as needed */
+}
+
+.activity-card,
+.facility-card,
+.staff-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Adjust as needed */
+}
+
+.activity-card img,
+.facility-card img,
+.staff-card img {
+    width: 100%;
+    height: 150px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+.activity-info,
+.facility-card h4,
+.staff-card h4 {
+    padding: 10px;
+    color: #343a40;
+}
+
+.facility-card p,
+.staff-card p {
+    padding: 10px;
+    color: #6c757d;
+}
+
+.clubs-associations ul {
+    list-style-type: disc;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.clubs-associations ul li {
+    margin: 5px 0;
+}
+
+/* Additional Styles */
+.btn-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #5cb874;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+    font-size: 24px;
+    color: #fff;
+    line-height: 0;
+  }
+  
+  .back-to-top:hover {
+    background: #78c48c;
+    color: #fff;
+  }
+  
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  /*Contact information*/
+  .contact .info {
+    border-top: 3px solid #5cb874;
+    border-bottom: 3px solid #5cb874;
+    padding: 30px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.contact .info i {
+    font-size: 20px;
+    color: #5cb874;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #eaf6ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #222222;
+}
+
+.contact .info p {
+    padding: 0 0 10px 60px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.contact .info .social-links {
+    padding-left: 60px;
+}
+
+.contact .info .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.contact .info .social-links a:hover {
+    background: #5cb874;
+    color: #fff;
+}
+
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
+    background: #5cb874;
+    color: #fff;
+}
+
+.contact .php-email-form {
+    width: 100%;
+    border-top: 3px solid #5cb874;
+    border-bottom: 3px solid #5cb874;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.contact .php-email-form .form-group {
+    padding-bottom: 8px;
+}
+
+.contact .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.contact .php-email-form .error-message br+br {
+    margin-top: 25px;
+}
+
+.contact .php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+    border-color: #5cb874;
+}
+
+.contact .php-email-form input {
+    height: 44px;
+}
+
+.contact .php-email-form textarea {
+    padding: 10px 12px;
+}
+
+.contact .php-email-form button[type=submit] {
+    background: #5cb874;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+    background: #6ec083;
+}
+
+@keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  

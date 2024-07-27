@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacancies for Medical Courses</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm 20mm 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            position: relative;
+            padding-bottom: 5px; /* Adjust padding-bottom to make it closer to the content */
+            margin-bottom: 10px; /* Adjust margin-bottom to make it closer to the border */
+            border-bottom: 5px solid #000; /* Thick border just after header content */
+            }
+        
+
+        .header img {
+            position: absolute;
+            top: 0;
+            height: 100px; /* Set logo height to header height */
+        }
+
+        .header .left-logo {
+            left: 0;
+            height: 100px;
+        }
+
+        .header .right-logo {
+            right: 0;
+            height: 100px;
+        }
+
+        .header .text {
+            margin: 0 auto;
+            width: 70%;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 16px;
+            text-transform: None;
+            font-weight: bold;
+        }
+
+        .header .office-location {
+            background-color: #7c2424; /* Dark red background color */
+            color: white;
+            font-weight: bold;
+            padding: 10px 100px; /* Increase padding for more space inside the section */
+            display: inline-block;
+        }
+
+        .header .contact-info {
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        .header .contact-info .location {
+            width: 56%;
+            text-align: justify;
+
+        }
+        .header .contact-info .location + .location {
+            border-left: 5px solid #7c2424; /* Thick vertical line separating locations */
+            padding-left: 5px;
+            padding-right: 5px;
+            text-align: left;
+        }
+
+
+        .header p {
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+        .watermark {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .watermark.large {
+            width: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .main-content {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .main-content h2 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        .main-content p, .main-content ul {
+            font-size: 14px;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+
+        .main-content ul {
+            padding-left: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10mm 0;
+            border-top: 2px solid #000;
+            position: relative;
+        }
+
+        .footer p {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+
+        .footer .watermark {
+            width: 100%;
+            top: 0;
+            left: 0;
+            transform: none;
+        }
+
+        .signature {
+            margin-top: 50px;
+        }
+
+        .signature p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .stamp {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .stamp img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo_left.png" alt="Left Logo" class="left-logo">
+            <img src="logo_right.png" alt="Right Logo" class="right-logo">
+            <div class="text">
+                <h1>Lubega Institute of Nursing and Health Professionals</h1>
+                <p class="office-location">IGANGA OFFICE | KAMPALA OFFICE</p>
+                <div class="contact-info">
+                    <div class="location">
+                        <p>P.O Box 427, Iganga Iganga</p>
+                        <p>Municipality Off Jinja-Malaba Highway</p>
+                        <p>Busei, Iganga District</p>
+                        <p>Tel: 0772 460130, 0782 856203</p>
+                    </div>
+                    <div class="location">
+                        <p>Sal building, Plot 71, Nkrumah road</p>
+                        <p>Kampala, Second floor, Room SF-17</p>
+                        <p>Email:admin@lubeganursinginstitute.com</p>
+                        <p>www.lubeganursinginstitute.com</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="main-content">
+            <p>Date: 16th July, 2024</p>
+
+            <h2>RE: VACANCIES FOR MEDICAL COURSES</h2>
+
+            <p>Lubega Institute of Nursing and Health Professionals informs all students who would wish to pursue medical courses that vacancies are still available in the following certificate and diploma courses:</p>
+            <img src="logo_left.png" alt="Watermark" class="watermark large" style="top: 120mm;">
+            <ul>
+                <li>Certificate in Enrolled Nursing</li>
+                <li>Certificate in Enrolled Midwifery</li>
+                <li>Certificate in Pharmacy</li>
+                <li>Certificate in Medical Laboratory Techniques</li>
+                <li>Diploma in Clinical Medicine and Community Health</li>
+                <li>Diploma in Nursing Extension</li>
+                <li>Diploma in Midwifery Extension</li>
+                <li>Diploma in Pharmacy</li>
+                <li>Diploma in Medical Laboratory Techniques</li>
+            </ul>
+
+            <p>Lubega Institute of Nursing and Health Professionals is located in Iganga district and application forms can be obtained from the main campus in Iganga Buseyi or the Liaisons office in Kampala along Nkrumah road SAL building Second Floor Room SF17.</p>
+
+            <p>For more information you can contact 0772460130 or 0782856203 or 0700693468.</p>
+
+            <div class="signature">
+                <p>Sincerely yours,</p>
+                <p>Kajura Aiden</p>
+                <p>Senior Administrator</p>
+                <p>Lubega Institute of Nursing and Health Professionals</p>
+            </div>
+
+            <div class="stamp">
+                <img src="stamp.png" alt="Institute Stamp">
+            </div>
+
+            <img src="logo_right.png" alt="Watermark" class="watermark large" style="top: 120mm;">
+        </div>
+
+        <div class="footer">
+            <p>Our Mission: To provide high quality education in nursing and medical sciences for generations of health professionals with the desired mix skills and knowledge to meet national and global health challenges at an affordable cost.</p>
+            <img src="logo.png" alt="Footer Watermark" class="watermark">
+        </div>
+    </div>
+</body>
+</html>

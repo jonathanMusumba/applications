@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.logo {
+    margin-left: 10px;
+    line-height: inherit;
+}
+
+.logo a {
+    color: #2808dbe7;
+    /* Change logo color if needed */
+    text-decoration: none;
+}
+
+.logo img {
+    height: 75px;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* White cloud background */
+    padding: 0px;
+    margin-left: auto;
+    /* Remove margin-left and add margin-right: auto */
+    margin-right: auto;
+    border-radius: 5px;
+    /* Optional: Add border-radius for rounded corners */
+}
+
+nav {
+    position: fixed;
+    background: #2b04db;
+    width: 100%;
+    height: 75px;
+    padding-top: 50px;
+    padding: 10px 0;
+    z-index: 12;
+}
+
+nav .menu {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.menu .logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.menu ul {
+    display: inline-flex;
+}
+
+.menu ul li {
+    list-style: none;
+    margin-left: 7px;
+}
+
+.menu ul li:first-child {
+    margin-left: 0px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background: #fff;
+    color: black;
+}
+
+.slideshow {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.center .title {
+    font-size: 55px;
+    font-weight: 600;
+}
+
+.center .sub_title {
+    font-size: 52px;
+    font-weight: 600;
+}
+
+.center .btns {
+    margin-top: 20px;
+}
+
+.center .btns button {
+    height: 55px;
+    width: 170px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 10px;
+    border: 2px solid white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    color: #fff;
+    background-color: transparent;
+}
+
+.center .btns button:hover {
+    background-color: #007bff;
+    /* Blue background on hover */
+    color: #fff;
+    /* White text color on hover */
+}
+
+.center .btns button:active {
+    background-color: #28a745;
+    /* Green background when clicked */
+    color: #fff;
+    /* White text color when clicked */
+}
+
+.center .btns a {
+    text-decoration: none;
+}
+
+.center .btns button:first-child {
+    color: #fff;
+    background: none;
+}
+
+.btns button:first-child:hover {
+    background: white;
+    color: black;
+}
+
+.center .btns button:last-child {
+    background: white;
+    color: black;
+}

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lubega Institute Registration Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 15px;
+        }
+        .invalid-feedback {
+            display: none;
+        }
+        
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+        
+        .card {
+            border: none;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+        }
+        
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        
+        .form-control:focus {
+            border-color: #28a745;
+            box-shadow: none;
+        }
+        
+        .alert-info,
+        .alert-danger {
+            margin-bottom: 20px;
+        }
+        
+        .alert-info {
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+            color: #31708f;
+        }
+        
+        .alert-danger {
+            background-color: #f2dede;
+            border-color: #ebccd1;
+            color: #a94442;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+        }
+        
+        .form-control {
+            margin-bottom: 10px;
+        }
+        
+        .input-group-text {
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            padding: 0.375rem 0.75rem;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .asterisk {
+            color: red;
+        }
+        
+        .form-row .col-md-6 {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <img src="images/logo.png" alt="Lubega logo" class="img-fluid" width="80">
+            <h5 class="mt-3">LUBEGA INSTITUTE</h5>
+            <h6>ONLINE APPLICATION PORTAL</h6>
+        </div>
+        <div class="alert alert-info text-center">
+            REGISTER WITH YOUR NAMES AS THEY APPEAR ON YOUR ACADEMIC DOCUMENTS. YOUR ONE TIME PASSWORD WILL BE SENT TO THE PHONE NUMBER AND EMAIL ADDRESS YOU PROVIDE HERE.
+        </div>
+        <div class="alert alert-danger text-center">
+            NOTE: PROVIDE THE CORRECT DETAILS ABOUT YOU AS YOU WILL NOT BE ALLOWED TO EDIT ANY DATA PROVIDED HERE
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="container mt-5">
+                    <form id="registrationForm" class="needs-validation" action="register.php" method="POST" novalidate>
+                        <div class="form-group col-md-6">
+                            <label for="surname"><span class="asterisk">*</span> Surname</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="surname" name="surname" placeholder="Surname" required>
+                                <div class="invalid-feedback">Please enter your surname (letters only).</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="otherNames"><span class="asterisk">*</span> Other Names:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="otherNames" name="otherNames" placeholder="Other Names" required>
+                                <div class="invalid-feedback">Please enter your other names (letters only).</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="email"><span class="asterisk">*</span> Email Address:</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                    </div>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                                    <div class="invalid-feedback" id="emailFeedback">
+                                        Email already registered.
+                                    </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="phone"><span class="asterisk">*</span> Phone:</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                    </div>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Include country code (E.G 256772...)" required>
+                                    <div class="invalid-feedback">Please enter a valid phone number.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="nationality"><span class="asterisk">*</span> Nationality:</label>
+                                <select class="form-control" id="nationality" name="nationality" required>
+                                    <option value="">Select option</option>
+                                    <option value="Uganda">Uganda</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="South Sudan">South Sudan</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="Burundi">Burundi</option>
+                                    <option value="DR Congo">DR Congo</option>
+                                </select>
+                                <div class="invalid-feedback">Please select your nationality.</div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="dob"><span class="asterisk">*</span> Date of Birth:</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" id="dob" name="dob" placeholder="dd/mm/yyyy" required>
+                                    <div class="invalid-feedback">Please enter a valid date of birth.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><span class="asterisk">*</span> Sex:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sex" id="male" value="male" required>
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="sex" id="female" value="female" required>
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                            <div class="invalid-feedback d-block">Please select your sex.</div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="password"><span class="asterisk">*</span> Set Password:</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                                    <div class="invalid-feedback">Password must be 6 or more characters.</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="confirmPassword"><span class="asterisk">*</span> Repeat Password:</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Repeat Password" required>
+                                    <div class="invalid-feedback">Passwords must match.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordHint">Password Hint:</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-question-circle"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="passwordHint" name="passwordHint" placeholder="Password Hint">
+                            </div>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="showPassword" onclick="togglePasswordVisibility()">
+                            <label class="form-check-label" for="showPassword">Show Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Register</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Already Registered? <a href="index.php">Log in Here</a></p>
+                    </div>
+                </div>
+            
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        $('#email').on('input', function() {
+                            var email = $(this).val();
+                            if (email) {
+                                $.ajax({
+                                    url: 'check_email.php',
+                                    type: 'POST',
+                                    data: { email: email },
+                                    success: function(response) {
+                                        if (response === 'exists') {
+                                            $('#email').addClass('is-invalid');
+                                            $('#emailFeedback').show();
+                                        } else {
+                                            $('#email').removeClass('is-invalid');
+                                            $('#emailFeedback').hide();
+                                        }
+                                    }
+                                });
+                            } else {
+                                $('#email').removeClass('is-invalid');
+                                $('#emailFeedback').hide();
+                            }
+                        });
+                    });
+                    
+                    (function() {
+                        'use strict';
+                        window.addEventListener('load', function() {
+                            var forms = document.getElementsByClassName('needs-validation');
+                            Array.prototype.filter.call(forms, function(form) {
+                                form.addEventListener('submit', function(event) {
+                                    if (form.checkValidity() === false) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                    }
+                                    form.classList.add('was-validated');
+                                }, false);
+                            });
+                        }, false);
+                    })();
+            
+                    // Toggle password visibility
+                    function togglePasswordVisibility() {
+                        var password = document.getElementById("password");
+                        var confirmPassword = document.getElementById("confirmPassword");
+                        if (password.type === "password") {
+                            password.type = "text";
+                            confirmPassword.type = "text";
+                        } else {
+                            password.type = "password";
+                            confirmPassword.type = "password";
+                        }
+                    }
+            
+                    // Custom validation for phone number
+                    document.getElementById('phone').addEventListener('input', function(e) {
+                        const phonePattern = /^(07|039|031|041|256)[0-9]{7,9}$/;
+                        if (!phonePattern.test(e.target.value.replace(/\s/g, ''))) {
+                            e.target.setCustomValidity('Phone number must be 10 or 12 digits and start with 07, 039, 031, 041, or +256.');
+                        } else {
+                            e.target.setCustomValidity('');
+                        }
+                    });
+            
+                    // Custom validation for names to be uppercase
+                    document.getElementById('surname').addEventListener('input', function(e) {
+                        e.target.value = e.target.value.toUpperCase().replace(/[^A-Z\s]/g, '');
+                    });
+            
+                    document.getElementById('otherNames').addEventListener('input', function(e) {
+                        e.target.value = e.target.value.toUpperCase().replace(/[^A-Z\s]/g, '');
+                    });
+            
+                    // Custom validation for date of birth
+                    document.getElementById('dob').addEventListener('input', function(e) {
+                        const dobPattern = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+                        if (!dobPattern.test(e.target.value)) {
+                            e.target.setCustomValidity('Please enter a valid date in the format dd/mm/yyyy.');
+                        } else {
+                            e.target.setCustomValidity('');
+                        }
+                    });
+            
+                    // Custom validation for password length
+                    document.getElementById('password').addEventListener('input', function(e) {
+                        if (e.target.value.length < 6) {
+                            e.target.setCustomValidity('Password must be 6 or more characters.');
+                        } else {
+                            e.target.setCustomValidity('');
+                        }
+                    });
+            
+                    // Custom validation for matching passwords
+                    document.getElementById('confirmPassword').addEventListener('input', function(e) {
+                        const password = document.getElementById('password').value;
+                        if (e.target.value !== password) {
+                            e.target.setCustomValidity('Passwords must match.');
+                        } else {
+                            e.target.setCustomValidity('');
+                        }
+                    });
+                </script>
+            </body>
+
+</html>

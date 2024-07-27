@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ee0707;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+        
+        h1,
+        h2 {
+            margin: 10px 0;
+            border-style: groove;
+            color: #f4f4f4;
+            background-color: chocolate;
+        }
+        
+        .form-grid {
+            display: grid;
+            gap: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+            }
+            .form-group {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <form class="form-grid" action="academics.php" method="post">
+            <div>
+                <label for="applicant_code">Enter Applicant Code to Continue:</label>
+                <input type="text" id="applicantCode" name="applicantCode">
+            </div>
+            <!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Academic Details</title>
+                <style>
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 0;
+                        padding: 0;
+                        background-color: #f4f4f4;
+                    }
+                    
+                    section {
+                        max-width: 800px;
+                        margin: 20px auto;
+                        padding: 20px;
+                        background-color: #fff;
+                        border-radius: 8px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+                    
+                    form {
+                        display: grid;
+                        gap: 10px;
+                    }
+                    
+                    label {
+                        font-weight: bold;
+                        text-align: right;
+                        white-space: 20px;
+                    }
+                    
+                    input[type="text"],
+                    input[type="number"] {
+                        padding: 8px;
+                        border-radius: 4px;
+                        border: 1px solid #ee0707;
+                        box-sizing: border-box;
+                    }
+                    
+                    input[type="text"]#indexNumberUCE,
+                    input[type="text"]#indexNumberUACE,
+                    input[type="text"]#yearUCE {
+                        width: calc(25% - 10px);
+                    }
+                    
+                    input[type="text"]#yearUACE {
+                        width: calc(25% - 10px);
+                    }
+                    
+                    input[type="text"],
+                    input[type="number"] {
+                        width: calc(10% - 10px);
+                    }
+                    
+                    input[type="submit"] {
+                        padding: 10px 20px;
+                        background-color: #4CAF50;
+                        color: white;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                    }
+                    
+                    input[type="submit"]:hover {
+                        background-color: #45a049;
+                    }
+                    
+                    hr {
+                        border: none;
+                        border-top: 1px solid #ccc;
+                    }
+                    
+                    h1,
+                    h2 {
+                        margin: 10px 0;
+                        border-style: groove;
+                        color: #f4f4f4;
+                        background-color: chocolate;
+                        cursor: pointer;
+                        padding: 5px 10px;
+                        border-radius: 5px;
+                    }
+                    
+                    .collapsible-content {
+                        display: none;
+                    }
+                </style>
+            </head>
+
+            <body>
+                <section>
+                    <h1 onclick="toggleSection('sectionUCE')">Uganda Certificate of Education (UCE)</h1>
+                    <div id="sectionUCE" class="collapsible-content">
+                        <form class="form-grid" action="academics.php" method="post">
+                            <div>
+                                <label for="index_number">Index Number:</label>
+                                <input type="text" id="indexNumberUCE" name="indexNumberUCE" required>
+                                <label for="year">Year:</label>
+                                <input type="number" id="yearUCE" name="yearUCE" min="1900" max="2099" step="1" style="width: 100px;">
+                            </div>
+                            <div>
+                                <label for="eng">Eng:</label>
+                                <input type="number" id="eng" name="eng" min="1" max="9" step="1" required>
+                                <label for="mtc">MTC:</label>
+                                <input type="number" id="mtc" name="mtc" min="1" max="9" step="1" required>
+                                <label for="bio">Bio:</label>
+                                <input type="number" id="bio" name="bio" min="1" max="9" step="1" required>
+                                <label for="chem">Chem:</label>
+                                <input type="number" id="chem" name="chem" min="1" max="9" step="1" required>
+                                <label for="phy">Phy:</label>
+                                <input type="text" id="phy" name="phy" min="1" max="9" step="1" required>
+                            </div>
+                            <div>
+                                <label for="geog">Geog:</label>
+                                <input type="number" id="geog" name="geog" min="1" max="9" step="1" required>
+                                <label for="his">His:</label>
+                                <input type="number" id="his" name="his" min="1" max="9" step="1" required>
+                                <label for="agric">Agric:</label>
+                                <input type="number" id="agric" name="agric" min="1" max="9" step="1">
+                                <label for="cre">CRE/IRE:</label>
+                                <input type="number" id="cre" name="cre" min="1" max="9" step="1">
+                                <label for="com">Com:</label>
+                                <input type="number" id="com" name="com" min="1" max="9" step="1">
+                            </div>
+                            <div>
+                                <label for="ent">Ent:</label>
+                                <input type="number" id="ent" name="ent" min="1" max="9" step="1">
+                                <label for="art">Art:</label>
+                                <input type="number" id="art" name="art" min="1" max="9" step="1">
+                                <label for="comp">Comp:</label>
+                                <input type="number" id="comp" name="comp" min="1" max="9" step="1">
+                                <label for="lit">Lit:</label>
+                                <input type="number" id="lit" name="lit" min="1" max="9" step="1">
+                                <label for="lus_lug">Lus/Lug:</label>
+                                <input type="number" id="lus_lug" name="lus_lug" min="1" max="9" step="1">
+                            </div>
+                            <div>
+                                <label for="aggregates">Aggregates:</label>
+                                <input type="number" id="aggregates" name="aggregates" min="8" max="64" step="1" required>
+                                <label for="division">Division:</label>
+                                <input type="number" id="division" name="division" min="1" max="4" step="1" required>
+                            </div>
+                            <div>
+                                <label for="uce_certificate">UCE Certificate:</label>
+                                <input type="file" id="uce_certificate" name="uce_certificate">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="container mt-5">
+                        <h1 onclick="toggleSection('sectionUACE')">Uganda Advanced Certificate of Education (UACE) Optional</h1>
+                        <div id="sectionUACE" class="collapse">
+                            <form action="academics.php" method="post" class="form-grid">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="indexNumberUACE">Index Number:</label>
+                                        <input type="text" class="form-control" id="indexNumberUACE" name="indexNumberUACE">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="yearUACE">Year:</label>
+                                        <input type="number" class="form-control" id="yearUACE" name="yearUACE" min="1900" max="2099" step="1">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="biology">Biology:</label>
+                                        <input type="text" class="form-control" id="biology" name="biology" min="0" max="6" step="1">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="chemistry">Chemistry:</label>
+                                        <input type="text" class="form-control" id="chemistry" name="chemistry" min="0" max="6" step="1">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="mathematics">Mathematics:</label>
+                                        <input type="number" class="form-control" id="mathematics" name="mathematics" min="0" max="6" step="1">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="agriculture">Agriculture:</label>
+                                        <input type="number" class="form-control" id="agriculture" name="agriculture" min="0" max="6" step="1">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="geography">Geography:</label>
+                                        <input type="number" class="form-control" id="geography" name="geography" min="0" max="6" step="1">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="physics">Physics:</label>
+                                        <input type="number" class="form-control" id="physics" name="physics" min="0" max="6" step="1">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="general_paper">General Paper:</label>
+                                        <input type="number" class="form-control" id="general_paper" name="general_paper" min="1" max="9" step="1">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="ict_sub_math">ICT/Sub Math:</label>
+                                        <input type="number" class="form-control" id="ict_sub_math" name="ict_sub_math" min="1" max="9" step="1">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="uace_certificate">UACE Certificate:</label>
+                                        <input type="file" class="form-control-file" id="uace_certificate" name="uace_certificate">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <h2 onclick="toggleSection('sectionIndirect')">Indirect Entry (Extension)</h2>
+                        <div id="sectionIndirect" class="collapsible-content">
+                            <p>Minimum qualification for indirect entry for diploma courses requires;</p>
+                            <p>(i) 'O' level certificate with 5 passes in English, Mathematics, Chemistry, Biology, and any other science subject.</p>
+                            <p>(ii) Any national certificate in health training attained from a recognized institution and registered with a relevant professional body.</p>
+                            <div>
+                                <h2>Working Exposure</h2>
+                                <label for="Place_of_work">Place of Work</label>
+                                <input type="text" id="workPlace" name="workPlace" style="width:250px;">
+                                <label for="designation">Designation</label>
+                                <input type="text" id="designation" name="designation" style="width:250px;"><br><br>
+                                <label for="supportDocuments">Supporting Documents:</label>
+                                <input type="file" id="supportDocuments" name="supportDocuments">
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit">Submit</button>
+                        </div>
+                </section>
+
+                <script>
+                    function toggleSection(sectionId) {
+                        var section = document.getElementById(sectionId);
+                        if (section.style.display === "none") {
+                            section.style.display = "block";
+                        } else {
+                            section.style.display = "none";
+                        }
+                    }
+
+                    function validateForm() {
+                        var indexNumberUCE = document.getElementById("indexNumberUCE").value;
+                        var yearUCE = document.getElementById("yearUCE").value;
+                        var indexNumberUACE = document.getElementById("indexNumberUACE").value;
+                        var yearUACE = document.getElementById("yearUACE").value;
+
+                        // Validate index number format
+                        var indexNumberPattern = /^U\d{4}\/\d{3}$/;
+                        if (!indexNumberPattern.test(indexNumberUCE)) {
+                            alert("Invalid UCE index number format. Please use format Uxxxx/xxx");
+                            return false;
+                        }
+
+                        // Validate UCE year
+                        var currentYear = new Date().getFullYear();
+                        if (parseInt(yearUCE) < (currentYear - 1)) {
+                            alert("UCE year should be at least 1 year before the current year.");
+                            return false;
+                        }
+
+                        // Validate UACE year if provided
+                        if (indexNumberUACE.trim() !== "") {
+                            if (!indexNumberPattern.test(indexNumberUACE)) {
+                                alert("Invalid UACE index number format. Please use format Uxxxx/xxx");
+                                return false;
+                            }
+                            if (parseInt(yearUACE) < (currentYear - 3)) {
+                                alert("UACE year should be at least 3 years before the current year.");
+                                return false;
+                            }
+                        }
+
+                        return true;
+                    }
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var indexNumbers = {};
+
+                        document.getElementById("form-grid").addEventListener("submit", function(event) {
+                            var indexNumberUCE = document.getElementById("indexNumberUCE").value;
+                            var yearUCE = document.getElementById("yearUCE").value;
+
+                            if (indexNumbers[yearUCE] && indexNumbers[yearUCE].includes(indexNumberUCE)) {
+                                alert("The index number " + indexNumberUCE + " has already been used for the year " + yearUCE);
+                                event.preventDefault();
+                            } else {
+                                if (!indexNumbers[yearUCE]) {
+                                    indexNumbers[yearUCE] = [];
+                                }
+                                indexNumbers[yearUCE].push(indexNumberUCE);
+                            }
+                        });
+                    });
+                </script>
+            </body>
+
+            </html>

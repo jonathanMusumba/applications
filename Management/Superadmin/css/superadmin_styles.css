@@ -1,0 +1,38 @@
+/* superadmin/styles.css */
+
+/* Light Mode */
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.table {
+    background-color: #ffffff;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    background-color: #212529;
+}
+
+body.dark-mode .table {
+    background-color: #495057;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}

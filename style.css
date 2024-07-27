@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.media-slider {
+    width: 100%;
+    height: 300px;
+    background: #ddd;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.posts-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.post {
+    width: calc(50% - 10px);
+    background: #f0f0f0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+.announcements, .intakes {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.announcements h2, .intakes h2 {
+    margin-top: 0;
+}
+
+.courses-slider, .campus-news, .advertisements, .affiliations, .contact-address {
+    padding: 20px;
+    background: #f9f9f9;
+    margin-top: 20px;
+}
+
+.courses-slider h2, .campus-news h2, .advertisements h2, .affiliations h2, .contact-address h2 {
+    margin-top: 0;
+}
+
+.courses-slider .course {
+    display: inline-block;
+    width: calc(33.333% - 10px);
+    margin-right: 10px;
+    background: #e0e0e0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.campus-news .news-container {
+    display: flex;
+    gap: 10px;
+}
+
+.campus-news .news {
+    flex: 1;
+    background: #e0e0e0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+#chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#chat-window {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+#chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+}
+#chat-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+}
+#chat-input input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+}
+#chat-input button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}

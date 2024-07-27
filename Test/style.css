@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.media-slider {
+    width: 100%;
+    height: 300px;
+    background: #ddd;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.posts-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.post {
+    width: calc(50% - 10px);
+    background: #f0f0f0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+.announcements, .intakes {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.announcements h2, .intakes h2 {
+    margin-top: 0;
+}
+
+.courses-slider, .campus-news, .advertisements, .affiliations, .contact-address {
+    padding: 20px;
+    background: #f9f9f9;
+    margin-top: 20px;
+}
+
+.courses-slider h2, .campus-news h2, .advertisements h2, .affiliations h2, .contact-address h2 {
+    margin-top: 0;
+}
+
+.courses-slider .course {
+    display: inline-block;
+    width: calc(33.333% - 10px);
+    margin-right: 10px;
+    background: #e0e0e0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.campus-news .news-container {
+    display: flex;
+    gap: 10px;
+}
+
+.campus-news .news {
+    flex: 1;
+    background: #e0e0e0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
