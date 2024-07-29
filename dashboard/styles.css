@@ -1,0 +1,51 @@
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.sidebar {
+    position: fixed;
+    top: 56px; /* Height of the navbar */
+    bottom: 0;
+    width: 200px;
+    overflow-y: auto;
+}
+
+#content-area {
+    margin-left: 200px; /* Width of the sidebar */
+    padding-top: 56px; /* Height of the navbar */
+}
+
+.nav-link.active {
+    background-color: #007bff;
+    color: white !important;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.form-check-input:checked + .slider {
+    background-color: #2196F3;
+}

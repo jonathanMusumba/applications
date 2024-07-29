@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['logged_in'] = time(); // Store login time for session expiration
 
                 $_SESSION['success'] = "Logged in successfully.";
-                header("Location: ../newProject/index.php"); // Redirect to dashboard or profile
+                header("Location: ../dashboard/index.php"); // Redirect to dashboard or profile
                 exit();
             } else {
                 // Account not verified
