@@ -5,17 +5,32 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: ../index.php");
     exit();
 }
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Form</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to custom external CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> <!-- jQuery UI CSS -->
+
+    <!-- jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!-- jQuery UI -->
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Bootstrap JS -->
+
+    <!-- Custom JavaScript -->
+    <script src="scripts.js"></script> <!-- Link to custom JavaScript -->
 </head>
+
 <body class="light-mode">
     <!-- Top Navigation -->
     <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: green; color: white;">
@@ -26,16 +41,16 @@ if (!isset($_SESSION['user_id'])) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="messages.php" data-target="messages" style="font-weight: bold; color: white;">MESSAGES</a>
+                    <a class="nav-link" href="#" data-target="messages" style="font-weight: bold; color: white;">MESSAGES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="applications.php" data-target="applications" style="font-weight: bold; color: white;">APPLICATIONS</a>
+                    <a class="nav-link" href="#" data-target="applications" style="font-weight: bold; color: white;">APPLICATIONS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="admissions.php" data-target="admissions" style="font-weight: bold; color: white;">ADMISSIONS</a>
+                    <a class="nav-link" href="#" data-target="admissions" style="font-weight: bold; color: white;">ADMISSIONS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="apply_now.php" data-target="apply" style="font-weight: bold; color: white;">APPLY NOW</a>
+                    <a class="nav-link" href="#" data-target="apply_now" style="font-weight: bold; color: white;">APPLY NOW</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -44,9 +59,9 @@ if (!isset($_SESSION['user_id'])) {
                         <i class="fas fa-user"></i> Profile
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="profile.php" data-target="profile">MY PROFILE</a>
-                        <a class="dropdown-item" href="change_password.php" data-target="change-password">CHANGE PASSWORD</a>
-                        <a class="dropdown-item" href="logout.php" data-target="logout">LOGOUT</a>
+                        <a class="dropdown-item" href="#" data-target="profile">MY PROFILE</a>
+                        <a class="dropdown-item" href="#" data-target="password_change">CHANGE PASSWORD</a>
+                        <a class="dropdown-item" href="#" data-target="logout">LOGOUT</a>
                     </div>
                 </li>
             </ul>
@@ -67,25 +82,28 @@ if (!isset($_SESSION['user_id'])) {
             <img src="logo.png" alt="Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
         </div>
         <div class="nav-item" style="border-bottom: 1px solid black;">
-            <a class="nav-link sidebar-nav-link" href="apply_now.php" data-target="apply"><i class="fas fa-clipboard-list"></i>APPLY NOW</a>
+        <a class="nav-link sidebar-nav-link" href="#" data-target="apply_now"><i class="fas fa-clipboard-list"></i>APPLY NOW</a> 
         </div>
         <div class="nav-item" style="border-bottom: 1px solid black;">
-            <a class="nav-link sidebar-nav-link" href="messages.php" data-target="messages"><i class="fas fa-envelope"></i>MESSAGES</a>
+            <a class="nav-link sidebar-nav-link" href="#" data-target="messages"><i class="fas fa-envelope"></i>MESSAGES</a>
         </div>
         <div class="nav-item" style="border-bottom: 1px solid black;">
-            <a class="nav-link sidebar-nav-link" href="admissions.php" data-target="admissions"><i class="fas fa-graduation-cap"></i>ADMISSIONS</a>
+            <a class="nav-link sidebar-nav-link" href="#" data-target="admissions"><i class="fas fa-graduation-cap"></i>ADMISSIONS</a>
         </div>
         <div class="nav-item" style="border-bottom: 1px solid black;">
-            <a class="nav-link sidebar-nav-link" href="applications.php" data-target="applications"><i class="fas fa-archive"></i>APPLICATIONS</a>
+            <a class="nav-link sidebar-nav-link" href="#" data-target="applications"><i class="fas fa-archive"></i>APPLICATIONS</a>
         </div>
         <div class="nav-item" style="border-bottom: 1px solid black;">
-            <a class="nav-link sidebar-nav-link" href="profile.php" data-target="profile"><i class="fas fa-user"></i>MY PROFILE</a>
+            <a class="nav-link sidebar-nav-link" href="#" data-target="profile"><i class="fas fa-user"></i>MY PROFILE</a>
         </div>
         <div class="nav-item" style="border-bottom: 1px solid black;">
-            <a class="nav-link" href="change_password.php" data-target="change-password"><i class="fas fa-key"></i>CHANGE PASSWORD</a>
+        <a class="nav-link sidebar-nav-link" href="#" data-target="password_change"><i class="fas fa-key"></i>CHANGE PASSWORD</a>  
+    
         </div>
         <div class="nav-item" style="border-bottom: 1px solid black;">
-            <a class="nav-link sidebar-nav-link" href="logout.php" data-target="logout"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
+        <!-- Sidebar Logout -->
+        <a class="nav-link sidebar-nav-link" href="logout.php" data-target="logout"><i class="fas fa-sign-out-alt"></i>LOGOUT</a>
+
         </div>
     </div>
 
@@ -102,10 +120,8 @@ if (!isset($_SESSION['user_id'])) {
     <div class="toast-container position-fixed bottom-0 right-0 p-3" style="z-index: 1050;">
     <!-- Toasts will be dynamically added here -->
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script> <!-- Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Bootstrap JS -->
-    <script src="main.js"></script> <!-- Link to external JavaScript -->
+    
+
+
 </body>
 </html>

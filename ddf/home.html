@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&E Form for NCDs among PLHIV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section label {
+            display: block;
+            margin: 5px 0;
+        }
+        .form-section input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        .form-section input[type="radio"],
+        .form-section input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-section select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Monitoring and Evaluation (M&E) Form for NCDs among PLHIV</h1>
+
+    <form>
+        <!-- Section 1 -->
+        <div class="form-section">
+            <label>1. Does the facility keep a record of NCDs patient data for PLHIV?</label>
+            <input type="radio" id="records_all_visits" name="records" value="all_visits">
+            <label for="records_all_visits">Yes, records kept for all visits</label>
+            <br>
+            <input type="radio" id="records_certain_visits" name="records" value="certain_visits">
+            <label for="records_certain_visits">Yes, records kept for certain types of visit (specify)</label>
+            <input type="text" id="records_specify" name="records_specify" placeholder="Specify type of visits">
+            <br>
+            <input type="radio" id="no_records" name="records" value="no_records">
+            <label for="no_records">No records kept</label>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="form-section">
+            <label>2. How are records kept for NCDs among PLHIV?</label>
+            <input type="checkbox" id="patient_files" name="record_kept" value="patient_files">
+            <label for="patient_files">Patient Files</label>
+            <br>
+            <input type="checkbox" id="registry_system" name="record_kept" value="registry_system">
+            <label for="registry_system">Registry system (Registers)</label>
+            <br>
+            <input type="checkbox" id="electronic" name="record_kept" value="electronic">
+            <label for="electronic">Electronic</label>
+            <br>
+            <input type="checkbox" id="other" name="record_kept" value="other">
+            <label for="other">Other (Specify)</label>
+            <input type="text" id="other_specify" name="other_specify" placeholder="Specify other methods">
+        </div>
+
+        <!-- Section 3 -->
+        <div class="form-section">
+            <label>3. Does the Health facility have integrated M&E tools for HIV and NCDs (updated ART card, ART register and quarterly report with NCDs indicators)?</label>
+            <input type="radio" id="tools_yes" name="integrated_tools" value="yes">
+            <label for="tools_yes">Yes</label>
+            <br>
+            <input type="radio" id="tools_no" name="integrated_tools" value="no">
+            <label for="tools_no">No</label>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="form-section">
+            <label>4. Are patient files consulted and updated for NCDs each time PLHIV visit the facility?</label>
+            <input type="radio" id="files_consulted_yes" name="files_consulted" value="yes_usually">
+            <label for="files_consulted_yes">Yes, patients’ files usually consulted and updated</label>
+            <br>
+            <input type="radio" id="files_consulted_yes_when_necessary" name="files_consulted" value="yes_when_necessary">
+            <label for="files_consulted_yes_when_necessary">Yes, patient files consulted and updated, but only when necessary</label>
+            <br>
+            <input type="radio" id="files_not_consulted" name="files_consulted" value="no">
+            <label for="files_not_consulted">No, patient files not consulted or updated</label>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="form-section">
+            <label>5. Has the health facility submitted a quarterly report of NCDs among PLHIV in the immediate past quarter?</label>
+            <input type="radio" id="quarterly_report_yes" name="quarterly_report" value="yes">
+            <label for="quarterly_report_yes">Yes</label>
+            <br>
+            <input type="radio" id="quarterly_report_no" name="quarterly_report" value="no">
+            <label for="quarterly_report_no">No</label>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="form-section">
+            <label>6. Does the facility have stock card or log books for:</label>
+            <br>
+            <label>a) NCDs Medicine for PLHIV</label>
+            <input type="radio" id="medicines_not_used_routinely" name="medicines" value="not_used_routinely">
+            <label for="medicines_not_used_routinely">Yes, but not used routinely</label>
+            <br>
+            <input type="radio" id="medicines_used_routinely" name="medicines" value="used_routinely">
+            <label for="medicines_used_routinely">Yes, used routinely and currently up-to-date</label>
+            <br>
+            <input type="radio" id="no_medicines" name="medicines" value="no">
+            <label for="no_medicines">No</label>
+            <br><br>
+            <label>b) Consumables (e.g. Syringes, bandages)</label>
+            <input type="radio" id="consumables_not_used_routinely" name="consumables" value="not_used_routinely">
+            <label for="consumables_not_used_routinely">Yes, but not used routinely</label>
+            <br>
+            <input type="radio" id="consumables_used_routinely" name="consumables" value="used_routinely">
+            <label for="consumables_used_routinely">Yes, used routinely and currently up-to-date</label>
+            <br>
+            <input type="radio" id="no_consumables" name="consumables" value="no">
+            <label for="no_consumables">No</label>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="form-section">
+            <label>7. Does the laboratory have a laboratory Information Management System for NCDs?</label>
+            <input type="radio" id="lims_yes" name="lims" value="yes">
+            <label for="lims_yes">Yes</label>
+            <br>
+            <input type="radio" id="lims_no" name="lims" value="no">
+            <label for="lims_no">No</label>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="form-section">
+            <label>8. Does the facility have laboratory registers with NCDs data and well filled?</label>
+            <input type="radio" id="registers_yes" name="registers" value="yes">
+            <label for="registers_yes">Yes</label>
+            <br>
+            <input type="radio" id="registers_no" name="registers" value="no">
+            <label for="registers_no">No</label>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

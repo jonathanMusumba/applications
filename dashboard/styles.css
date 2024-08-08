@@ -49,3 +49,36 @@ body.dark-mode {
 .form-check-input:checked + .slider {
     background-color: #2196F3;
 }
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.tab-pane {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.required:after {
+    content: " *";
+    color: red;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control-sm {
+    font-size: 14px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+.nav-link.disabled, .sidebar-nav-link.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+

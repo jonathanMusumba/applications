@@ -328,3 +328,36 @@ $(document).ready(function() {
 
     $('#toast').toast({ delay: 2000 });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dobInput = document.getElementById('dob');
+
+    function validateAge() {
+        const dobValue = dobInput.value;
+        if (!dobValue) {
+            dobInput.classList.add('is-invalid');
+            dobInput.setCustomValidity('Date of Birth is required.');
+            return;
+        }
+
+        const dobDate = new Date(dobValue);
+        const today = new Date();
+        const age = today.getFullYear() - dobDate.getFullYear();
+        const m = today.getMonth() - dobDate.getMonth();
+        
+        if (m < 0 || (m === 0 && today.getDate() < dobDate.getDate())) {
+            age--;
+        }
+
+        if (age < 18) {
+            dobInput.classList.add('is-invalid');
+            dobInput.setCustomValidity('Applicant should be 18 years and above.');
+        } else {
+            dobInput.classList.remove('is-invalid');
+            dobInput.setCustomValidity('');
+        }
+    }
+
+    dobInput.addEventListener('change', validateAge);
+    dobInput.addEventListener('input', validateAge); // For instant feedback on typing
+});

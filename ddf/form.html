@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form>
+            <div class="container mt-5">
+                <h2 class="mb-4">ONLINE APPLICATION FORM</h2>
+            <div class="accordion" id="applicationFormAccordion">
+            <!-- Bio Information Section -->
+            <h3>Bio Information Section</h3>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="salutation">Salutation</label>
+                    <select id="salutation" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>Mr</option>
+                        <option>Ms</option>
+                        <option>Mrs</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="surname">Surname</label>
+                    <input type="text" class="form-control" id="surname" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="otherNames">Other Names</label>
+                    <input type="text" class="form-control" id="otherNames" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="sex">Sex</label>
+                    <select id="sex" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="religion">Religion</label>
+                    <select id="religion" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>Christian</option>
+                        <option>Muslim</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="maritalStatus">Marital Status</label>
+                    <select id="maritalStatus" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>Single</option>
+                        <option>Married</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="telephone">Telephone</label>
+                    <input type="text" class="form-control" id="telephone" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="districtOfBirth">District of Birth</label>
+                    <select id="districtOfBirth" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>District 1</option>
+                        <option>District 2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="districtOfOrigin">District of Origin</label>
+                    <select id="districtOfOrigin" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>District 1</option>
+                        <option>District 2</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="ninNumber">NIN Number</label>
+                    <input type="text" class="form-control" id="ninNumber">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="linNumber">LIN Number</label>
+                    <input type="text" class="form-control" id="linNumber">
+                </div>
+            </div>
+
+            <!-- Permanent Address -->
+            <h3>Permanent Address</h3>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="addressDistrict">District</label>
+                    <select id="addressDistrict" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>District 1</option>
+                        <option>District 2</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="subCounty">Sub County</label>
+                    <input type="text" class="form-control" id="subCounty" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="village">Village</label>
+                    <input type="text" class="form-control" id="village" required>
+                </div>
+            </div>
+
+            <!-- Next of Kin -->
+            <h3>Next of Kin</h3>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="nextOfKinName">Full Name</label>
+                    <input type="text" class="form-control" id="nextOfKinName" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nextOfKinPhone">Telephone</label>
+                    <input type="text" class="form-control" id="nextOfKinPhone" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nextOfKinDistrict">District</label>
+                    <select id="nextOfKinDistrict" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>District 1</option>
+                        <option>District 2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="relationship">Relationship</label>
+                    <input type="text" class="form-control" id="relationship" required>
+                </div>
+            </div>
+
+            <!-- Select Course -->
+            <h3>Select Course</h3>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="courseName">Course Name</label>
+                    <select id="courseName" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>Course 1</option>
+                        <option>Course 2</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="scheme">Scheme</label>
+                    <select id="scheme" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>DIRECT ENTRY</option>
+                        <option>INDIRECT ENTRY</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="level">Level</label>
+                    <select id="level" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>CERTIFICATE</option>
+                        <option>DIPLOMA</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- O Level Information -->
+            <h3>O Level Information</h3>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="schoolNameOLevel">School Name</label>
+                    <input type="text" class="form-control" id="schoolNameOLevel" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="indexNumberOLevel">Index Number</label>
+                    <input type="text" class="form-control" id="indexNumberOLevel" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="yearOLevel">Year</label>
+                    <select id="yearOLevel" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>D1</option>
+                        <option>D2</option>
+                        <option>C3</option>
+                        <option>C4</option>
+                        <option>C5</option>
+                        <option>C6</option>
+                        <option>P7</option>
+                        <option>P8</option>
+                        <option>F9</option>
+                    </select>
+                </div>
+            </div>
+            <h5>Subject Scores</h5>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="englishGrade">English</label>
+                    <select id="englishGrade" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>D1</option>
+                        <option>D2</option>
+                        <option>C3</option>
+                        <option>C4</option>
+                        <option>C5</option>
+                        <option>C6</option>
+                        <option>P7</option>
+                        <option>P8</option>
+                        <option>F9</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="mathGrade">Mathematics</label>
+                    <select id="mathGrade" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>D1</option>
+                        <option>D2</option>
+                        <option>C3</option>
+                        <option>C4</option>
+                        <option>C5</option>
+                        <option>C6</option>
+                        <option>P7</option>
+                        <option>P8</option>
+                        <option>F9</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="physicsGrade">Physics</label>
+                    <select id="physicsGrade" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>D1</option>
+                        <option>D2</option>
+                        <option>C3</option>
+                        <option>C4</option>
+                        <option>C5</option>
+                        <option>C6</option>
+                        <option>P7</option>
+                        <option>P8</option>
+                        <option>F9</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="chemistryGrade">Chemistry</label>
+                    <select id="chemistryGrade" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>D1</option>
+                        <option>D2</option>
+                        <option>C3</option>
+                        <option>C4</option>
+                        <option>C5</option>
+                        <option>C6</option>
+                        <option>P7</option>
+                        <option>P8</option>
+                        <option>F9</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="biologyGrade">Biology</label>
+                    <select id="biologyGrade" class="form-control" required>
+                        <option selected>Choose...</option>
+                        <option>D1</option>
+                        <option>D2</option>
+                        <option>C3</option>
+                        <option>C4</option>
+                        <option>C5</option>
+                        <option>C6</option>
+                        <option>P7</option>
+                        <option>P8</option>
+                        <option>F9</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- A Level Information -->
+            <h3>A Level Information (Optional)</h3>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="schoolNameALevel">School Name</label>
+                    <input type="text" class="form-control" id="schoolNameALevel">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="indexNumberALevel">Index Number</label>
+                    <input type="text" class="form-control" id="indexNumberALevel">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="yearALevel">Year</label>
+                    <select id="yearALevel" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Year 1</option>
+                        <option>Year 2</option>
+                    </select>
+                </div>
+            </div>
+            <h5>Subject Scores</h5>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="mathGradeALevel">Mathematics</label>
+                    <select id="mathGradeALevel" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>A</option>
+                        <option>B</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="biologyGradeALevel">Biology</label>
+                    <select id="biologyGradeALevel" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>O</option>
+                        <option>F</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="chemistryGradeALevel">Chemistry</label>
+                    <select id="chemistryGradeALevel" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>O</option>
+                        <option>F</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="physicsGradeALevel">Physics</label>
+                    <select id="physicsGradeALevel" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>O</option>
+                        <option>F</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="geographyGradeALevel">Geography</label>
+                    <select id="geographyGradeALevel" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>O</option>
+                        <option>F</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="agricultureGradeALevel">Agriculture</label>
+                    <select id="agricultureGradeALevel" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>O</option>
+                        <option>F</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Other Qualifications -->
+            <h3>Other Qualifications (Optional)</h3>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="institutionName">Institution Name</label>
+                    <input type="text" class="form-control" id="institutionName">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="courseStudied">Course Studied</label>
+                    <input type="text" class="form-control" id="courseStudied">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="startYear">Start Year</label>
+                    <input type="text" class="form-control" id="startYear">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="completionYear">Completion Year</label>
+                    <input type="text" class="form-control" id="completionYear">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="registered">Registered</label>
+                    <select id="registered" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="registrationNumber">Registration Number</label>
+                    <input type="text" class="form-control" id="registrationNumber">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="yearOfRegistration">Year of Registration</label>
+                    <input type="text" class="form-control" id="yearOfRegistration">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="yearsInService">Years Worked</label>
+                    <input type="text" class="form-control" id="yearsInService">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

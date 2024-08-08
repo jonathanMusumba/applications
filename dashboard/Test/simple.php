@@ -103,9 +103,9 @@
                         <div class="invalid-feedback">Sex is required.</div>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="dob">Date of Birth</label>
-                        <input type="date" class="form-control form-control-sm" id="dob" required>
-                        <div class="invalid-feedback">Date of Birth is required.</div>
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" class="form-control form-control-sm" id="dob" required>
+                     <div class="invalid-feedback">Applicant should be 18 years and above.</div>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="religion">Religion</label>

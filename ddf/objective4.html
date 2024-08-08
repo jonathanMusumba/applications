@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection Tool for Objective 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-section {
+            margin-bottom: 40px;
+        }
+        .form-section h3 {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Data Collection Tool for Objective 4</h1>
+
+<!-- Section 4.1 -->
+<div class="form-section">
+    <h3>4.1. Health System Related Information</h3>
+
+    <div class="form-group">
+        <label for="date-collection">Date of data collection</label>
+        <input type="date" id="date-collection" name="date-collection">
+    </div>
+
+    <div class="form-group">
+        <label for="facility-name">What is the health facility’s name?</label>
+        <input type="text" id="facility-name" name="facility-name">
+    </div>
+
+    <div class="form-group">
+        <label for="level-of-care">What level of care is the health Facility?</label>
+        <select id="level-of-care" name="level-of-care">
+            <option value="">Select</option>
+            <!-- Add options as needed -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="region">What Region is the health Facility Found?</label>
+        <select id="region" name="region">
+            <option value="">Select</option>
+            <!-- Add options as needed -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="facility-district">Health Facility District</label>
+        <input type="text" id="facility-district" name="facility-district">
+    </div>
+
+    <div class="form-group">
+        <label for="facility-location">Where is the health facility located?</label>
+        <select id="facility-location" name="facility-location">
+            <option value="">Select</option>
+            <!-- Add options as needed -->
+        </select>
+        <input type="text" id="facility-location-other" name="facility-location-other" placeholder="If Others Specify">
+    </div>
+
+    <div class="form-group">
+        <label for="respondent">Who is the Respondent?</label>
+        <select id="respondent" name="respondent">
+            <option value="">Select</option>
+            <!-- Add options as needed -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="geo-location">Pick the Geo-location for the Health Facility</label>
+        <input type="text" id="geo-location" name="geo-location">
+    </div>
+</div>
+
+<!-- Section 4.2 -->
+<div class="form-section">
+    <h3>4.2. Human Resources for NCDs Management among PLHIV</h3>
+
+    <div class="form-group">
+        <label for="staffing-level">What is the staffing level in line with MoH established positions for this health facility? (Proportion filled by cadre)</label>
+        <input type="text" id="staffing-level" name="staffing-level">
+    </div>
+
+    <div class="form-group">
+        <label for="ncd-training">Are the health workers trained on NCD screening and management for PLHIV?</label>
+        <select id="ncd-training" name="ncd-training">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="staff-trained-number">How many of the staff (by cadre have received in-service training in NCDs management?</label>
+        <input type="number" id="staff-trained-number" name="staff-trained-number">
+    </div>
+
+    <div class="form-group">
+        <label>Please record the number of health workers trained for management of NCDs among PLHIV (stratified by cadre)</label>
+        <label>Number of Doctors/Clinicians:</label>
+        <input type="number" id="doctors-trained" name="doctors-trained">
+        <label>Number of Nurses:</label>
+        <input type="number" id="nurses-trained" name="nurses-trained">
+        <label>Number of Laboratory Staff:</label>
+        <input type="number" id="lab-staff-trained" name="lab-staff-trained">
+        <label>Number of Data Personnel:</label>
+        <input type="number" id="data-personnel-trained" name="data-personnel-trained">
+    </div>
+
+    <h4>NCD Specific Staff training</h4>
+    <div class="form-group">
+        <label for="total-staff">Total Number of Staff at the health Facility</label>
+        <input type="number" id="total-staff" name="total-staff">
+    </div>
+    <div class="form-group">
+        <label for="htn-training">Number trained to offer HTN services</label>
+        <input type="number" id="htn-training" name="htn-training">
+    </div>
+    <div class="form-group">
+        <label for="dm-training">Number trained to offer DM services</label>
+        <input type="number" id="dm-training" name="dm-training">
+    </div>
+    <div class="form-group">
+        <label for="alcohol-abuse-training">Number trained to offer services related to alcohol and substance abuse.</label>
+        <input type="number" id="alcohol-abuse-training" name="alcohol-abuse-training">
+    </div>
+    <div class="form-group">
+        <label for="depression-training">Number trained to offer services related to depression, anxiety among PLHIV patients</label>
+        <input type="number" id="depression-training" name="depression-training">
+    </div>
+    <div class="form-group">
+        <label for="obesity-training">Number of staff trained to offer services for management of obesity</label>
+        <input type="number" id="obesity-training" name="obesity-training">
+    </div>
+
+    <div class="form-group">
+        <label for="ncd-focal-person">Does the health facility have an NCD focal person?</label>
+        <select id="ncd-focal-person" name="ncd-focal-person">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ncd-hiv-peers">Does the health facility have NCDs-HIV peers that provide none-specialized NCD/HIV services?</label>
+        <select id="ncd-hiv-peers" name="ncd-hiv-peers">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="psychotherapy-training">Are there staff trained to provide psychotherapy for PLHIV with mental illness?</label>
+        <select id="psychotherapy-training" name="psychotherapy-training">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+</div>
+
+<!-- Section 4.3 -->
+<div class="form-section">
+    <h3>4.3. Service Availability for NCDs among PLHIV</h3>
+
+    <div class="form-group">
+        <label for="ncd-hiv-guidelines">Are NCD-HIV integrated guidelines present at the health facility?</label>
+        <select id="ncd-hiv-guidelines" name="ncd-hiv-guidelines">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="job-aides">Does the Health facility currently have Job aides for screening, diagnosis, management and monitoring of NCDs among PLHIV?</label>
+        <select id="job-aides" name="job-aides">
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="ncd-screening-tools">Are the tools for NCD screening available at the health facility?</label>
+            <select id="ncd-screening-tools" name="ncd-screening-tools">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="htn-screening">Does the health facility routinely screen for hypertension among PLHIV?</label>
+            <select id="htn-screening" name="htn-screening">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="dm-screening">Does the health facility routinely screen for diabetes mellitus (DM) among PLHIV?</label>
+            <select id="dm-screening" name="dm-screening">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="cancer-screening">Does the health facility routinely screen for cancer among PLHIV?</label>
+            <select id="cancer-screening" name="cancer-screening">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="depression-screening">Does the health facility routinely screen for depression among PLHIV?</label>
+            <select id="depression-screening" name="depression-screening">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="substance-abuse-screening">Does the health facility routinely screen for alcohol/substance abuse among PLHIV?</label>
+            <select id="substance-abuse-screening" name="substance-abuse-screening">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="other-ncd-screening">Does the health facility routinely screen for other NCDs among PLHIV? (Specify)</label>
+            <input type="text" id="other-ncd-screening" name="other-ncd-screening">
+        </div>
+        
+        <div class="form-group">
+            <label for="htn-services">Does the health facility offer treatment and care services for Hypertension (HTN) among PLHIV?</label>
+            <select id="htn-services" name="htn-services">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="dm-services">Does the health facility offer treatment and care services for Diabetes Mellitus (DM) among PLHIV?</label>
+            <select id="dm-services" name="dm-services">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="cancer-services">Does the health facility offer treatment and care services for Cancer among PLHIV?</label>
+            <select id="cancer-services" name="cancer-services">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="depression-services">Does the health facility offer treatment and care services for Depression among PLHIV?</label>
+            <select id="depression-services" name="depression-services">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="substance-abuse-services">Does the health facility offer treatment and care services for alcohol/substance abuse among PLHIV?</label>
+            <select id="substance-abuse-services" name="substance-abuse-services">
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="other-ncd-services">Does the health facility offer treatment and care services for other NCDs among PLHIV? (Specify)</label>
+            <input type="text" id="other-ncd-services" name="other-ncd-services">
+        </div>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="ncd-screening-tools">Are the tools for NCD screening available at the health facility?</label>
+    <select id="ncd-screening-tools" name="ncd-screening-tools">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="htn-screening">Does the health facility routinely screen for hypertension among PLHIV?</label>
+    <select id="htn-screening" name="htn-screening">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="dm-screening">Does the health facility routinely screen for diabetes mellitus (DM) among PLHIV?</label>
+    <select id="dm-screening" name="dm-screening">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="cancer-screening">Does the health facility routinely screen for cancer among PLHIV?</label>
+    <select id="cancer-screening" name="cancer-screening">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="depression-screening">Does the health facility routinely screen for depression among PLHIV?</label>
+    <select id="depression-screening" name="depression-screening">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="substance-abuse-screening">Does the health facility routinely screen for alcohol/substance abuse among PLHIV?</label>
+    <select id="substance-abuse-screening" name="substance-abuse-screening">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="other-ncd-screening">Does the health facility routinely screen for other NCDs among PLHIV? (Specify)</label>
+    <input type="text" id="other-ncd-screening" name="other-ncd-screening">
+</div>
+
+<div class="form-group">
+    <label for="htn-services">Does the health facility offer treatment and care services for Hypertension (HTN) among PLHIV?</label>
+    <select id="htn-services" name="htn-services">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="dm-services">Does the health facility offer treatment and care services for Diabetes Mellitus (DM) among PLHIV?</label>
+    <select id="dm-services" name="dm-services">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="cancer-services">Does the health facility offer treatment and care services for Cancer among PLHIV?</label>
+    <select id="cancer-services" name="cancer-services">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="depression-services">Does the health facility offer treatment and care services for Depression among PLHIV?</label>
+    <select id="depression-services" name="depression-services">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="substance-abuse-services">Does the health facility offer treatment and care services for alcohol/substance abuse among PLHIV?</label>
+    <select id="substance-abuse-services" name="substance-abuse-services">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="other-ncd-services">Does the health facility offer treatment and care services for other NCDs among PLHIV? (Specify)</label>
+    <input type="text" id="other-ncd-services" name="other-ncd-services">
+</div>
+</div>
+
+<!-- Section 4.4 -->
+<div class="form-section">
+<h3>4.4. Essential Medicines and Health Supplies (EMHS)</h3>
+
+<div class="form-group">
+    <label for="ncd-emhs-availability">Are EMHS for NCDs available at the health facility?</label>
+    <select id="ncd-emhs-availability" name="ncd-emhs-availability">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="stock-out">Has the health facility experienced stock-outs of EMHS for NCDs in the past 6 months?</label>
+    <select id="stock-out" name="stock-out">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="medicines-availability">Are medicines for the management of Hypertension (HTN) available?</label>
+    <select id="medicines-availability" name="medicines-availability">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="dm-medicines-availability">Are medicines for the management of Diabetes Mellitus (DM) available?</label>
+    <select id="dm-medicines-availability" name="dm-medicines-availability">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="cancer-medicines-availability">Are medicines for the management of Cancer available?</label>
+    <select id="cancer-medicines-availability" name="cancer-medicines-availability">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="depression-medicines-availability">Are medicines for the management of Depression available?</label>
+    <select id="depression-medicines-availability" name="depression-medicines-availability">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="substance-abuse-medicines-availability">Are medicines for the management of Alcohol/Substance Abuse available?</label>
+    <select id="substance-abuse-medicines-availability" name="substance-abuse-medicines-availability">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="other-medicines-availability">Are other medicines for the management of NCDs available? (Specify)</label>
+    <input type="text" id="other-medicines-availability" name="other-medicines-availability">
+</div>
+</div>
+
+<!-- Section 4.5 -->
+<div class="form-section">
+<h3>4.5. Equipment for NCDs Management among PLHIV</h3>
+
+<div class="form-group">
+    <label for="equipment-availability">Is the equipment for management of NCDs among PLHIV available and functional at the health facility?</label>
+    <select id="equipment-availability" name="equipment-availability">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select
+
+>
+</div>
+
+<div class="form-group">
+    <label for="bp-machines">Are BP machines available?</label>
+    <select id="bp-machines" name="bp-machines">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="glucometers">Are Glucometers available?</label>
+    <select id="glucometers" name="glucometers">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="cancer-screening-tools">Are Cancer screening tools available?</label>
+    <select id="cancer-screening-tools" name="cancer-screening-tools">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="lipid-profiles">Are Lipid Profiles available?</label>
+    <select id="lipid-profiles" name="lipid-profiles">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="ecg-machines">Are ECG machines available?</label>
+    <select id="ecg-machines" name="ecg-machines">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="depression-screening-tools">Are tools for screening Depression available?</label>
+    <select id="depression-screening-tools" name="depression-screening-tools">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="substance-abuse-tools">Are tools for screening Alcohol/Substance Abuse available?</label>
+    <select id="substance-abuse-tools" name="substance-abuse-tools">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="other-equipment">Is other equipment for NCDs management among PLHIV available? (Specify)</label>
+    <input type="text" id="other-equipment" name="other-equipment">
+</div>
+</div> 
+
+<!-- Section 4.6 -->
+<div class="form-section">
+<h3>4.6. Financing for NCDs Management among PLHIV</h3>
+
+<div class="form-group">
+    <label for="ncd-financing">Does the health facility have dedicated financing for NCDs management among PLHIV?</label>
+    <select id="ncd-financing" name="ncd-financing">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="financing-sources">What are the sources of financing for NCDs management? (Specify)</label>
+    <input type="text" id="financing-sources" name="financing-sources">
+</div>
+</div>
+
+<!-- Section 4.7 -->
+<div class="form-section">
+<h3>4.7. Patient Monitoring and Follow-up</h3>
+
+<div class="form-group">
+    <label for="ncd-monitoring">Are PLHIV who are diagnosed with NCDs monitored and followed up regularly?</label>
+    <select id="ncd-monitoring" name="ncd-monitoring">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="follow-up-system">Is there a system for follow-up and monitoring of PLHIV diagnosed with NCDs?</label>
+    <select id="follow-up-system" name="follow-up-system">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="challenges">What challenges are faced in the follow-up and monitoring of PLHIV with NCDs? (Specify)</label>
+    <input type="text" id="challenges" name="challenges">
+</div>
+
+<div class="form-group">
+    <label for="suggestions">What suggestions do you have to improve the follow-up and monitoring of PLHIV with NCDs? (Specify)</label>
+    <input type="text" id="suggestions" name="suggestions">
+</div>
+</div> 
+
+<!-- Section 4.8 -->
+<div class="form-section">
+<h3>4.8. Health Information Management Systems (HIMS) and Data Management</h3>
+
+<div class="form-group">
+    <label for="hims-ncds-integration">Is NCD management among PLHIV integrated into the Health Information Management Systems (HIMS) at the health facility?</label>
+    <select id="hims-ncds-integration" name="hims-ncds-integration">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="data-collection">Is data on NCDs management among PLHIV collected at the health facility?</label>
+    <select id="data-collection" name="data-collection">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="data-reporting">Is data on NCDs management among PLHIV reported to the national level?</label>
+    <select id="data-reporting" name="data-reporting">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="data-accuracy">Is the data on NCDs management among PLHIV accurate and complete?</label>
+    <select id="data-accuracy" name="data-accuracy">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="data-challenges">What challenges are faced in collecting and managing data on NCDs management among PLHIV? (Specify)</label>
+    <input type="text" id="data-challenges" name="data-challenges">
+</div>
+
+<div class="form-group">
+    <label for="data-improvements">What suggestions do you have to improve data collection and management on NCDs among PLHIV? (Specify)</label>
+    <input type="text" id="data-improvements" name="data-improvements">
+</div>
+</div> 
+
+<!-- Section 4.9 -->
+<div class="form-section">
+<h3>4.9. Community Linkages and Referral Systems for NCDs Management among PLHIV</h3>
+
+<div class="form-group">
+    <label for="community-linkages">Does the health facility have community linkages for NCDs management among PLHIV?</label>
+    <select id="community-linkages" name="community-linkages">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="referral-system">Is there a referral system for NCDs management among PLHIV at the health facility?</label>
+    <select id="referral-system" name="referral-system">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="referral-challenges">What challenges are faced in the referral system for NCDs management among PLHIV? (Specify)</label>
+    <input type="text" id="referral-challenges" name="referral-challenges">
+</div>
+
+<div class="form-group">
+    <label for="referral-improvements">What suggestions do you have to improve
+
+the referral system for NCDs management among PLHIV? (Specify)</label>
+    <input type="text" id="referral-improvements" name="referral-improvements">
+</div>
+</div> 
+
+<!-- Section 4.10 -->
+<div class="form-section">
+<h3>4.10. Research and Training on NCDs Management among PLHIV</h3>
+
+<div class="form-group">
+    <label for="research-ncds">Is research on NCDs management among PLHIV conducted at the health facility?</label>
+    <select id="research-ncds" name="research-ncds">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="ncds-training">Is training on NCDs management among PLHIV provided to health facility staff?</label>
+    <select id="ncds-training" name="ncds-training">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="training-challenges">What challenges are faced in conducting research and training on NCDs management among PLHIV? (Specify)</label>
+    <input type="text" id="training-challenges" name="training-challenges">
+</div>
+
+<div class="form-group">
+    <label for="training-suggestions">What suggestions do you have to improve research and training on NCDs management among PLHIV? (Specify)</label>
+    <input type="text" id="training-suggestions" name="training-suggestions">
+</div>
+</div> 
+
+<!-- Section 4.11 -->
+<div class="form-section">
+<h3>4.11. Governance and Leadership for NCDs Management among PLHIV</h3>
+
+<div class="form-group">
+    <label for="governance-structure">Does the health facility have a governance structure for NCDs management among PLHIV?</label>
+    <select id="governance-structure" name="governance-structure">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="governance-challenges">What challenges are faced in governance and leadership for NCDs management among PLHIV? (Specify)</label>
+    <input type="text" id="governance-challenges" name="governance-challenges">
+</div>
+
+<div class="form-group">
+    <label for="governance-suggestions">What suggestions do you have to improve governance and leadership for NCDs management among PLHIV? (Specify)</label>
+    <input type="text" id="governance-suggestions" name="governance-suggestions">
+</div>
+</div> 
+<form action="your-processing-script.php" method="POST">
+
+    <!-- Section 4.5.1 -->
+    <div class="form-section">
+        <h3>4.5.1 Availability of Medicines for NCDs among PLHIV</h3>
+
+        <div class="form-group">
+            <label for="stockout-question">Does the health facility at times experience some NCDs medicines stock outs?</label>
+            <input type="radio" id="stockout-yes" name="stockout-question" value="yes">
+            <label for="stockout-yes">Yes</label>
+            <input type="radio" id="stockout-no" name="stockout-question" value="no">
+            <label for="stockout-no">No</label>
+        </div>
+
+        <div class="form-group">
+            <label for="stockout-management">If yes, how does the health facility/patients manage NCDs medicine stock out?</label>
+            <textarea id="stockout-management" name="stockout-management"></textarea>
+        </div>
+    </div>
+
+    <!-- Section 4.5.2 -->
+    <div class="form-section">
+        <h3>4.5.2 Availability of NCDs/HIV Medicines for PLHIV</h3>
+
+        <!-- Example for Amlodipine -->
+        <div class="form-group">
+            <label for="medicine-amplodipine">Amlodipine</label>
+            <input type="radio" id="amplodipine-always" name="medicine-amplodipine" value="always">
+            <label for="amplodipine-always">Always Available</label>
+            <input type="radio" id="amplodipine-sometimes" name="medicine-amplodipine" value="sometimes">
+            <label for="amplodipine-sometimes">Available sometimes</label>
+            <input type="radio" id="amplodipine-not" name="medicine-amplodipine" value="not_available">
+            <label for="amplodipine-not">Not Available</label>
+        </div>
+
+        <!-- Repeat similar blocks for other medicines (Valsartan, Losartan, etc.) -->
+        <!-- Example for Valsartan -->
+        <div class="form-group">
+            <label for="medicine-valsartan">Valsartan</label>
+            <input type="radio" id="valsartan-always" name="medicine-valsartan" value="always">
+            <label for="valsartan-always">Always Available</label>
+            <input type="radio" id="valsartan-sometimes" name="medicine-valsartan" value="sometimes">
+            <label for="valsartan-sometimes">Available sometimes</label>
+            <input type="radio" id="valsartan-not" name="medicine-valsartan" value="not_available">
+            <label for="valsartan-not">Not Available</label>
+        </div>
+
+        <!-- Add similar fields for each medicine -->
+
+        <div class="form-group">
+            <label for="stockout-past-3-months">Has there been a stock out of essential medicines for NCDs among PLHIV during the past 3 months?</label>
+            <input type="radio" id="stockout-past-3-months-yes" name="stockout-past-3-months" value="yes">
+            <label for="stockout-past-3-months-yes">Yes</label>
+            <input type="radio" id="stockout-past-3-months-no" name="stockout-past-3-months" value="no">
+            <label for="stockout-past-3-months-no">No</label>
+        </div>
+
+        <div class="form-group">
+            <label for="list-ncds-medicine">If yes, list all NCDs medicines that have been out of stock</label>
+            <textarea id="list-ncds-medicine" name="list-ncds-medicine"></textarea>
+        </div>
+    </div>
+
+    <!-- Section 4.5.3 Monitoring and Evaluation (M&E) for NCDs -->
+    <div class="form-section">
+        <h3>4.5.3 Monitoring and Evaluation (M&E) for NCDs</h3>
+
+        <div class="form-group">
+            <label for="keep-record">Does the facility keep a record of NCDs patient data for PLHIV?</label>
+            <input type="checkbox" id="keep-record-yes" name="keep-record" value="yes">
+            <label for="keep-record-yes">Yes, records kept for all visits</label><br>
+            <input type="checkbox" id="keep-record-some" name="keep-record" value="some">
+            <label for="keep-record-some">Yes, records kept for certain types of visits</label><br>
+            <input type="checkbox" id="keep-record-no" name="keep-record" value="no">
+            <label for="keep-record-no">No records kept</label>
+        </div>
+
+        <div class="form-group">
+            <label for="record-keeping-method">How are records kept for NCDs among PLHIV?</label>
+            <input type="checkbox" id="record-files" name="record-keeping-method[]" value="patient_files">
+            <label for="record-files">Patient Files</label><br>
+            <input type="checkbox" id="record-registry" name="record-keeping-method[]" value="registry">
+            <label for="record-registry">Registry System/Register</label><br>
+            <input type="checkbox" id="record-electronic" name="record-keeping-method[]" value="electronic">
+            <label for="record-electronic">Electronic</label><br>
+            <input type="checkbox" id="record-other" name="record-keeping-method[]" value="other">
+            <label for="record-other">Other (Specify)</label>
+            <input type="text" id="record-other-details" name="record-other-details">
+        </div>
+
+        <div class="form-group">
+            <label for="integrated-me-tools">Does the Health facility have integrated M&E tools for HIV and NCDs (updated ART card, ART register and quarterly report with NCDs indicators)?</label>
+            <input type="radio" id="integrated-me-tools-yes" name="integrated-me-tools" value="yes">
+            <label for="integrated-me-tools-yes">Yes</label>
+            <input type="radio" id="integrated-me-tools-no" name="integrated-me-tools" value="no">
+            <label for="integrated-me-tools-no">No</label>
+        </div>
+
+        <div class="form-group">
+            <label for="update-patient-files">Are patient files consulted and updated for NCDs each time PLHIV visit the facility?</label>
+            <input type="checkbox" id="update-patient-files-yes" name="update-patient-files" value="yes">
+            <label for="update-patient-files-yes">Yes, patient files usually consulted and updated</label><br>
+            <input type="checkbox" id="update-patient-files-sometimes" name="update-patient-files" value="sometimes">
+            <label for="update-patient-files-sometimes">Yes, patient files consulted and updated, but only when necessary</label><br>
+            <input type="checkbox" id="update-patient-files-no" name="update-patient-files" value="no">
+            <label for="update-patient-files-no">No, patient files not consulted or updated</label>
+        </div>
+
+        <div class="form-group">
+            <label for="quarterly-report">Has the health facility submitted a quarterly report of NCDs among PLHIV in the immediate past quarter?</label>
+            <input type="radio" id="quarterly-report-yes" name="quarterly-report" value="yes">
+            <label for="quarterly-report-yes">Yes</label>
+            <input type="radio" id="quarterly-report-no" name="quarterly-report" value="no">
+            <label for="quarterly-report-no">No</label>
+        </div>
+
+        <div class="form-group">
+            <label for="stock-cards">Does the facility have stock card or log books for:</label><br>
+            <label>NCDs Medicine for PLHIV:</label><br>
+            <input type="radio" id="stock-cards-yes" name="stock-cards-ncds-medicine" value="yes">
+            <label for="stock-cards-yes">Yes, used routinely and currently up-to-date</label><br>
+            <input type="radio" id="stock-cards-yes-not-updated" name="stock-cards-ncds-medicine" value="yes-not-updated">
+            <label for="stock-cards-yes-not-updated">Yes, but not used routinely</label><br>
+            <input type="radio" id="stock-cards-no" name="stock-cards-ncds-medicine" value="no">
+            <label for="stock-cards-no">No</label><br>
+
+            <label>Consumables (e.g. Syringes, bandages):</label><br>
+            <input type="radio" id="stock-cards-consumables-yes" name="stock-cards-cons
+
+
+</form>
+</body>
+</html>

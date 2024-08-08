@@ -34,7 +34,7 @@ function initializeAutocomplete(schoolInputId, centerNumberId) {
 }
 
 // Initialize autocomplete for O Level
-initializeAutocomplete('schoolUCE', 'centerNumberUCE');
+initializeAutocomplete('schoolNameOLevel', 'centerNumberOLevel');
 
 // Initialize autocomplete for A Level
-initializeAutocomplete('schoolUACE', 'centerNumberUACE');
+initializeAutocomplete('schoolNameALevel', 'centerNumberALevel');

@@ -1,0 +1,99 @@
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.sidebar {
+    position: fixed;
+    top: 56px; /* Height of the navbar */
+    bottom: 0;
+    width: 200px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    border-right: 1px solid black;
+}
+
+#content-area {
+    margin-left: 200px; /* Width of the sidebar */
+    padding-top: 56px; /* Height of the navbar */
+}
+
+.nav-link.active {
+    background-color: #007bff;
+    color: white !important;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+    width: 60px;
+    height: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    background-color: white;
+    width: 26px;
+    height: 26px;
+    left: 4px;
+    bottom: 4px;
+    transition: .4s;
+}
+
+.form-check-input:checked + .slider {
+    background-color: #2196F3;
+}
+
+.form-check-input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.tab-pane {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.required:after {
+    content: " *";
+    color: red;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control-sm {
+    font-size: 14px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.nav-link.disabled, .sidebar-nav-link.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
