@@ -19,7 +19,7 @@ $subCountiesResult = $conn->query("SELECT id, subcounty FROM sub_counties");
 $subCounties = $subCountiesResult->fetch_all(MYSQLI_ASSOC);
 
 // Fetch school types
-$schoolTypesResult = $conn->query("SELECT id, type FROM school_type");
+$schoolTypesResult = $conn->query("SELECT id, type FROM school_types");
 $schoolTypes = $schoolTypesResult->fetch_all(MYSQLI_ASSOC);
 
 

@@ -115,8 +115,8 @@ INSERT INTO sub_counties (subcounty, constituency) VALUES
 
 $conn->query($sql);
 
-// Process form data
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//Process form 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $boardName = $_POST['boardName'];
     $examYear = $_POST['examYear'];
 

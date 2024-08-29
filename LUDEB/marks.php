@@ -28,7 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_marks'])) {
     $current_user_id = $_SESSION['user_id'];
 
     foreach ($_POST['marks'] as $candidate_id => $mark) {
+        // Determine if the mark is an absence
         $mark = intval($mark); // Ensure mark is an integer
+        if ($mark === 0) {
+            $mark = -1; // Use -1 to denote "Absent"
+        }
 
         // Check if mark already exists
         $check_sql = "SELECT * FROM marks WHERE candidate_id = ? AND subject_id = ?";
@@ -36,29 +40,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_marks'])) {
         $stmt->bind_param("ii", $candidate_id, $subject_id);
         $stmt->execute();
         $result = $stmt->get_result();
-        
+
         if ($result->num_rows == 0) {
             // Insert new mark
             $insert_sql = "INSERT INTO marks (candidate_id, subject_id, mark, submitted_at, submitted_by, school_id) VALUES (?, ?, ?, NOW(), ?, ?)";
             $stmt = $conn->prepare($insert_sql);
-            $stmt->bind_param("iiisi", $candidate_id, $subject_id, $mark, $user_id, $school_id);
+            $stmt->bind_param("iiisi", $candidate_id, $subject_id, $mark, $current_user_id, $school_id);
             $stmt->execute();
         } else {
             // Update existing mark
             $update_sql = "UPDATE marks SET mark = ?, updated_at = NOW(), edited_by = ? WHERE candidate_id = ? AND subject_id = ?";
             $stmt->prepare($update_sql);
-            $stmt->bind_param("iiii", $mark, $user_id, $candidate_id, $subject_id);
+            $stmt->bind_param("iiii", $mark, $current_user_id, $candidate_id, $subject_id);
             $stmt->execute();
         }
-
-        // Remove candidate from local storage
-        echo "<script>localStorage.removeItem('marks_$candidate_id');</script>";
     }
 
     // Redirect to the same page with a success message to prevent form resubmission
     header("Location: " . $_SERVER['PHP_SELF'] . "?school_id=" . urlencode($school_id) . "&status=success");
     exit();
 }
+
+        $subject_count_sql = "SELECT COUNT(DISTINCT subject_id) AS subject_count FROM marks WHERE school_id = ?";
+        $stmt = $conn->prepare($subject_count_sql);
+        $stmt->bind_param("i", $school_id);
+        $stmt->execute();
+        $subject_count_result = $stmt->get_result();
+        $subject_count_row = $subject_count_result->fetch_assoc();
+        $subject_count = $subject_count_row['subject_count'];
+
+        // Update resultsStatus if subject count is 4
+        if ($subject_count >= 4) {
+            $update_school_sql = "UPDATE schools SET resultsStatus = 'Declared' WHERE id = ?";
+            $stmt = $conn->prepare($update_school_sql);
+            $stmt->bind_param("i", $school_id);
+            if ($stmt->execute()) {
+                echo "<div class='alert alert-success'>School status updated to Declared!</div>";
+            } else {
+                echo "<div class='alert alert-danger'>Failed to update school status.</div>";
+            }
+        }
+
+
 
 // Fetch current year for exam year
 $current_year = date('Y');
@@ -87,12 +110,37 @@ if (isset($_GET['school_id']) && isset($_GET['subject_id'])) {
 $search_candidates = [];
 if (isset($_GET['term'])) {
     $term = $conn->real_escape_string($_GET['term']);
-    $search_result = $conn->query("SELECT id, Candidate_Name FROM candidates WHERE Candidate_Name LIKE '%$term%'");
+    // Search by candidate_name or IndexNo
+    $search_sql = "SELECT id, Candidate_Name, IndexNo 
+                    FROM candidates 
+                    WHERE Candidate_Name LIKE '%$term%' OR IndexNo LIKE '%$term%'";
+    $search_result = $conn->query($search_sql);
     while ($row = $search_result->fetch_assoc()) {
-        $search_candidates[] = $row['Candidate_Name'];
+        $search_candidates[] = [
+            'id' => $row['id'],
+            'name' => $row['Candidate_Name'],
+            'index_number' => $row['IndexNo']
+        ];
     }
     echo json_encode($search_candidates);
     exit;
+}
+// Fetch candidates based on selected school
+$candidates = [];
+if (isset($_GET['school_id']) && isset($_GET['subject_id'])) {
+    $school_id = intval($_GET['school_id']);
+    $subject_id = intval($_GET['subject_id']);
+    $search_term = $_GET['term'] ?? ''; // Get search term from query params
+
+    $candidates_result = $conn->query(
+        "SELECT id, Candidate_Name, IndexNo 
+         FROM candidates 
+         WHERE school_id = $school_id 
+         AND (Candidate_Name LIKE '%$search_term%' OR IndexNo LIKE '%$search_term%')"
+    );
+    while ($row = $candidates_result->fetch_assoc()) {
+        $candidates[$row['id']] = ['name' => $row['Candidate_Name'], 'index_number' => $row['IndexNo']];
+    }
 }
 
 ?>
@@ -158,10 +206,11 @@ if (isset($_GET['term'])) {
     <button onclick="location.reload();" class="btn btn-secondary mb-3">Reload</button>
 
     <form method="POST" action="">
-        <div class="form-group">
-            <label for="search_student">Search Student:</label>
-            <input type="text" id="search_student" class="form-control" placeholder="Enter candidate name">
-        </div>
+    <div class="form-group">
+        <label for="search_student">Search Student:</label>
+        <input type="hidden" id="school_id" value="">
+        <input type="text" id="search_student" class="form-control" placeholder="Enter candidate name or Index Number">
+    </div>
 
         <?php if (!empty($candidates)): ?>
             <table class="table table-bordered" id="marksTable">
@@ -342,6 +391,40 @@ function sortTable(n) {
                 $(this).closest('form').submit();
             }
         });
+
+    $("#search_student").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: "search_candidate.php",
+                dataType: "json",
+                data: {
+                    term: request.term
+                },
+                success: function (data) {
+                    response(data.map(item => ({
+                        label: item.name + ' (' + item.index_number + ')',
+                        value: item.id
+                    })));
+                }
+            });
+        },
+        select: function (event, ui) {
+            filterTable(ui.item.value);
+        }
+    });
+
+    function filterTable(candidate_id) {
+        $('#marksTable tbody tr').each(function () {
+            var row = $(this);
+            if (row.attr('id') === 'candidate_' + candidate_id) {
+                row.show();
+            } else {
+                row.hide();
+            }
+        });
+    }
+    
+
 </script>
 
 </body>

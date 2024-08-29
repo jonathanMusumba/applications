@@ -19,7 +19,7 @@ $user = $_POST['username'];
 $pass = $_POST['password'];
 
 // Prepare and execute SQL statement
-$stmt = $conn->prepare("SELECT id, username, password, role FROM system_users WHERE username = ? OR email = ?");
+$stmt = $conn->prepare("SELECT id, username, password, role, status FROM system_users WHERE username = ? OR email = ?");
 $stmt->bind_param("ss", $user, $user);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -27,22 +27,35 @@ $result = $stmt->get_result();
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     
+    // Check status
+    if ($row['status'] == 'Invalid') {
+        echo "Your account is invalid. Please contact support.";
+        exit();
+    }
+
     // Verify password
     if (password_verify($pass, $row['password'])) {
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['username'] = $row['username'];
         $_SESSION['role'] = $row['role'];
         
+        // Update last login time
+        $now = date('Y-m-d H:i:s');
+        $updateStmt = $conn->prepare("UPDATE system_users SET last_login = ? WHERE id = ?");
+        $updateStmt->bind_param("si", $now, $row['id']);
+        $updateStmt->execute();
+        $updateStmt->close();
+
         // Redirect based on role
         switch ($row['role']) {
             case 'System Admin':
-                header("Location: system_admin_dashboard.php");
+                header("Location: Dashboard1.php");
                 break;
             case 'Examination Administrator':
                 header("Location: admin_dashboard.php");
                 break;
             case 'Data Entrant':
-                header("Location: data_entry_dashboard.php");
+                header("Location: home.php");
                 break;
             default:
                 header("Location: index.php");
